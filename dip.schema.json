@@ -55,6 +55,9 @@
         "atzDataConfig":{
             "type": "object",
             "properties": {
+              "pipelineGroup": {
+                  "type": "string"
+              },
               "maskId": {
                 "type": "object",
                 "properties": {
@@ -135,7 +138,8 @@
             },
             "required": [
               "source",
-              "target"
+              "target",
+              "pipelineGroup"
             ],
             "additionalProperties": false
           },
