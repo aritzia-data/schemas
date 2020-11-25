@@ -89,7 +89,7 @@
                 "properties": {
                   "location": {
                     "type": "string",
-                    "pattern": "(gs:\/\/)(([a-zA-Z0-9].*)[a-zA-Z0-9])|(projects\/([a-zA-Z0-9-]{6,30})\/subscriptions\/([A-Za-z0-9-_.~+%]{3,255}))"
+                    "pattern": "(projects\/([a-zA-Z0-9-]{6,30})\/subscriptions\/([A-Za-z0-9-_.~+%]{3,255}))"
                   },
                   "topic": {
                     "type": "string",
@@ -101,7 +101,6 @@
                   }
                 },
                 "required": [
-                  "location",
                   "type"
                 ],
                 "additionalProperties": false
