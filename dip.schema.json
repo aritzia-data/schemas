@@ -113,6 +113,9 @@
                 "pubsub"
               ]
             },
+            "frequency": {
+              "type": "string"
+            },
             "load": {
               "type": "string",
               "enum": [
