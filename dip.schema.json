@@ -123,6 +123,9 @@
                 "full",
                 "delta"
               ]
+            },
+            "ignoreQueryTimestamp": {
+              "type": "boolean"              
             }
           },
           "required": [
