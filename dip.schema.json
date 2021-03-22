@@ -124,7 +124,7 @@
                 "delta"
               ]
             },
-            "useTimestampForQuery": {
+            "ignoreQueryTimestamp": {
               "type": "boolean"              
             }
           },
