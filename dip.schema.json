@@ -110,7 +110,8 @@
               "type": "string",
               "enum": [
                 "gcs",
-                "pubsub"
+                "pubsub",
+                "w2p"
               ]
             },
             "frequency": {
@@ -151,7 +152,7 @@
                 "technical-owner": {
                   "type": "string"
                 }
-              }
+              }              
             }
           },
           "required": [
