@@ -110,7 +110,8 @@
               "type": "string",
               "enum": [
                 "gcs",
-                "pubsub"
+                "pubsub",
+                "w2p"
               ]
             },
             "frequency": {
