@@ -142,6 +142,17 @@
             },
             "type": {
               "type": "string"
+            },
+            "labels": {
+              "type": "object",
+              "properties": {
+                "application-name": {
+                  "type": "string"
+                },
+                "technical-owner": {
+                  "type": "string"
+                }
+              }              
             }
           },
           "required": [
