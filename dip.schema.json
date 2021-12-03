@@ -168,11 +168,10 @@
     },
     "title": {
       "type": "string",
-      "pattern": "([a-zA-Z0-9]+)_(sbx|dev|qa|prd).([a-zA-Z0-9]+)"
+      "pattern": "([a-zA-Z0-9]+)_(sbx|dev|qa|prd)\\.([a-zA-Z0-9]+)"
     },
     "description": {
-      "type": "string",
-      "pattern": ".{0,1024}"
+      "type": "string"
     },
     "default": true,
     "readOnly": {
