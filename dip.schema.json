@@ -171,7 +171,8 @@
       "pattern": "([a-zA-Z0-9]+)_(sbx|dev|qa|prd).([a-zA-Z0-9]+)"
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "pattern": ".{0,1024}"
     },
     "default": true,
     "readOnly": {
