@@ -162,8 +162,7 @@
         }
       },
       "required": [
-        "source",
-        "target"
+        "source"
       ],
       "additionalProperties": false
     },
@@ -261,7 +260,7 @@
       "default": {}
     },
     "properties": {
-      "type": "object",
+      "type": ["object", "null"],
       "additionalProperties": {
         "$ref": "#"
       },
