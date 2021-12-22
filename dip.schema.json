@@ -162,7 +162,8 @@
         }
       },
       "required": [
-        "source"
+        "source",
+        "target"
       ],
       "additionalProperties": false
     },
