@@ -167,6 +167,14 @@
       ],
       "additionalProperties": false
     },
+    "atzMaskType": {
+      "type": "string",
+      "enum": [
+        "encryptAndHash",
+        "encrypt",
+        "encryptAndToken"
+      ]
+    },
     "title": {
       "type": "string",
       "pattern": "([a-zA-Z0-9]+)_(sbx|dev|qa|prd)\\.([a-zA-Z0-9]+)"
@@ -346,5 +354,6 @@
       "$ref": "#"
     }
   },
-  "default": true
+  "default": true,
+  "additionalProperties": false
 }
