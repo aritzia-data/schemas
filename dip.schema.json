@@ -138,6 +138,12 @@
             },
             "type": {
               "type": "string"
+            },
+            "labels": {
+              "type": "object",
+              "properties": {
+              },
+              "additionalProperties": true
             }
           },
           "required": [
@@ -159,16 +165,12 @@
                 "type": "string"
               }
             },
-            "required": [
-              "level1"
-            ],
             "additionalProperties": false
           }
       },
       "required": [
         "source",
-        "target",
-        "domain"
+        "target"
       ],
       "additionalProperties": false
     },
