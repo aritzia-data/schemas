@@ -138,28 +138,37 @@
             },
             "type": {
               "type": "string"
-            },
-            "labels": {
-              "type": "object",
-              "properties": {
-                "application-name": {
-                  "type": "string"
-                },
-                "technical-owner": {
-                  "type": "string"
-                }
-              }
             }
           },
           "required": [
             "location",
             "type"
-          ]
-        }
+          ],
+          "additionalProperties": false
+        },
+        "domain": {
+            "type": "object",
+            "properties": {
+              "level1": {
+                "type": "string"
+              },
+              "level2": {
+                "type": "string"
+              },
+              "level3": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "level1"
+            ],
+            "additionalProperties": false
+          }
       },
       "required": [
         "source",
-        "target"
+        "target",
+        "domain"
       ],
       "additionalProperties": false
     },
