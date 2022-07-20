@@ -144,7 +144,7 @@
               "properties": {
                   "application-name": {
                   "type": "string"
-                },
+                }
               },
               "additionalProperties": true
             }
