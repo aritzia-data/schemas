@@ -142,6 +142,9 @@
             "labels": {
               "type": "object",
               "properties": {
+                  "application-name": {
+                  "type": "string"
+                },
               },
               "additionalProperties": true
             }
