@@ -1,0 +1,104 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://acme.com/schema.schema.json",
+    "title": "Schema",
+    "description": "A Kirby Schema",
+    "type": "object",
+    "properties": {
+        "mask": {
+            "$ref": "#/$defs/mask"
+        },
+        "columns": {
+            "title": "Schema top-level columns",
+            "description": "The top-level columns of the schema",
+            "type": "object",
+            "additionalProperties": {
+                "$ref": "#/$defs/column"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "$defs": {
+        "mask": {
+            "title": "Schema column mask",
+            "description": "A mask for a column",
+            "type": "object",
+            "properties": {
+                "sourceId": {
+                    "description": "The source ID of the mask",
+                    "type": "string"
+                },
+                "primaryFields": {
+                    "title": "Schema column mask primary fields",
+                    "description": "The primary fields of the mask",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "secondaryFields": {
+                    "title": "Schema column mask secondary fields",
+                    "description": "The secondary fields of the mask",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "addditionalProperties": false
+        },
+        "column": {
+            "title": "Schema column",
+            "description": "A column in a schema",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "Description of the column"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Type of the column",
+                    "enum": [
+                        "string",
+                        "integer",
+                        "number",
+                        "boolean",
+                        "null",
+                        "array",
+                        "object"
+                    ],
+                    "default": "string"
+                },
+                "maskType": {
+                    "type": "string",
+                    "description": "Mask type of the column",
+                    "enum": [
+                        "encrypt",
+                        "encryptAndHash",
+                        "encryptAndToken"
+                    ]
+                }
+            },
+            "additionalProperties": {
+                "oneOf": [
+                    {
+                        "$comment": "Columns can contain columns recursively",
+                        "$ref": "#/$defs/column"
+                    },
+                    {
+                        "$comment": "Columns can contain arrays of columns",
+                        "$ref": "#/$defs/columnArray"
+                    }
+                ]
+            }
+        },
+        "columnArray": {
+            "title": "Schema array of columns",
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/column"
+            }
+        }
+    }
+}
