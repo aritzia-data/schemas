@@ -1,0 +1,40 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://acme.com/entity.schema.json",
+    "title": "Entity",
+    "description": "A Kirby entity",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "The name of the entity",
+            "pattern": "^[a-z]+_(qa|prd)\\.[a-z_]+$"
+        },
+        "description": {
+            "type": "string",
+            "description": "The description of the entity"
+        },
+        "ownership": {
+            "$ref": "ownership.schema.json"
+        },
+        "source": {
+            "$ref": "source.schema.json"
+        },
+        "targets": {
+            "title": "Entity targets",
+            "description": "The targets of the entity",
+            "type": "array",
+            "items": {
+                "$ref": "target.schema.json"
+            }
+        },
+        "schema": {
+            "$ref": "schema.schema.json"
+        }
+    },
+    "required": [
+        "name",
+        "source"
+    ],
+    "additionalProperties": false
+}

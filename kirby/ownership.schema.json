@@ -1,0 +1,241 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://acme.com/ownership.schema.json",
+    "title": "Ownership",
+    "description": "A Kirby entity ownership",
+    "type": "object",
+    "properties": {
+        "domain": {
+            "type": "string",
+            "description": "The data domain of the entity",
+            "enum": [
+                "concierge",
+                "customers",
+                "ecommerce",
+                "employees",
+                "products",
+                "sales",
+                "salesevents",
+                "shared",
+                "supplychain"
+            ]
+        },
+        "subdomain": {
+            "type": "string",
+            "description": "The subdomain of the entity"
+        }
+    },
+    "required": [
+        "domain"
+    ],
+    "anyOf": [
+        {
+            "$ref": "#/$defs/concierge-domain-and-subdomain"
+        },
+        {
+            "$ref": "#/$defs/customers-domain-and-subdomain"
+        },
+        {
+            "$ref": "#/$defs/ecommerce-domain-and-subdomain"
+        },
+        {
+            "$ref": "#/$defs/employees-domain-and-subdomain"
+        },
+        {
+            "$ref": "#/$defs/products-domain-and-subdomain"
+        },
+        {
+            "$ref": "#/$defs/sales-domain-and-subdomain"
+        },
+        {
+            "$ref": "#/$defs/salesevents-domain-and-subdomain"
+        },
+        {
+            "$ref": "#/$defs/shared-domain-and-subdomain"
+        },
+        {
+            "$ref": "#/$defs/supplychain-domain-and-subdomain"
+        }
+    ],
+    "$defs": {
+        "concierge-domain-and-subdomain": {
+            "title": "Concierge domain",
+            "properties": {
+                "domain": {
+                    "const": "concierge"
+                },
+                "subdomain": {
+                    "type": "string",
+                    "description": "The concierge subdomain of the entity",
+                    "enum": [
+                        "concierge-sub1",
+                        "concierge-sub2"
+                    ]
+                }
+            },
+            "required": [
+                "domain"
+            ],
+            "additionalProperties": false
+        },
+        "customers-domain-and-subdomain": {
+            "title": "Customers domain",
+            "properties": {
+                "domain": {
+                    "const": "customers"
+                },
+                "subdomain": {
+                    "type": "string",
+                    "description": "The customers subdomain of the entity",
+                    "enum": [
+                        "customers-sub1",
+                        "customers-sub2"
+                    ]
+                }
+            },
+            "required": [
+                "domain"
+            ],
+            "additionalProperties": false
+        },
+        "ecommerce-domain-and-subdomain": {
+            "title": "eCommerce domain",
+            "properties": {
+                "domain": {
+                    "const": "ecommerce"
+                },
+                "subdomain": {
+                    "type": "string",
+                    "description": "The ecommerce subdomain of the entity",
+                    "enum": [
+                        "ecommerce-sub1",
+                        "ecommerce-sub2"
+                    ]
+                }
+            },
+            "required": [
+                "domain"
+            ],
+            "additionalProperties": false
+        },
+        "employees-domain-and-subdomain": {
+            "title": "Employees domain",
+            "properties": {
+                "domain": {
+                    "const": "employees"
+                },
+                "subdomain": {
+                    "type": "string",
+                    "description": "The employees subdomain of the entity",
+                    "enum": [
+                        "employees-sub1",
+                        "employees-sub2"
+                    ]
+                }
+            },
+            "required": [
+                "domain"
+            ],
+            "additionalProperties": false
+        },
+        "products-domain-and-subdomain": {
+            "title": "Products domain",
+            "properties": {
+                "domain": {
+                    "const": "products"
+                },
+                "subdomain": {
+                    "type": "string",
+                    "description": "The products subdomain of the entity",
+                    "enum": [
+                        "products-sub1",
+                        "products-sub2"
+                    ]
+                }
+            },
+            "required": [
+                "domain"
+            ],
+            "additionalProperties": false
+        },
+        "sales-domain-and-subdomain": {
+            "title": "Sales domain",
+            "properties": {
+                "domain": {
+                    "const": "sales"
+                },
+                "subdomain": {
+                    "type": "string",
+                    "description": "The sales subdomain of the entity",
+                    "enum": [
+                        "sales-sub1",
+                        "sales-sub2"
+                    ]
+                }
+            },
+            "required": [
+                "domain"
+            ],
+            "additionalProperties": false
+        },
+        "salesevents-domain-and-subdomain": {
+            "title": "Sales Events domain",
+            "properties": {
+                "domain": {
+                    "const": "salesevents"
+                },
+                "subdomain": {
+                    "type": "string",
+                    "description": "The salesevents subdomain of the entity",
+                    "enum": [
+                        "salesevents-sub1",
+                        "salesevents-sub2"
+                    ]
+                }
+            },
+            "required": [
+                "domain"
+            ],
+            "additionalProperties": false
+        },
+        "shared-domain-and-subdomain": {
+            "title": "Shared domain",
+            "properties": {
+                "domain": {
+                    "const": "shared"
+                },
+                "subdomain": {
+                    "type": "string",
+                    "description": "The shared subdomain of the entity",
+                    "enum": [
+                        "shared-sub1",
+                        "shared-sub2"
+                    ]
+                }
+            },
+            "required": [
+                "domain"
+            ],
+            "additionalProperties": false
+        },
+        "supplychain-domain-and-subdomain": {
+            "title": "Supply Chain domain",
+            "properties": {
+                "domain": {
+                    "const": "supplychain"
+                },
+                "subdomain": {
+                    "type": "string",
+                    "enum": [
+                        "supplychain-sub1",
+                        "supplychain-sub2"
+                    ]
+                }
+            },
+            "required": [
+                "domain"
+            ],
+            "additionalProperties": false
+        }
+    }
+}
