@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://dip.acme.com/ownership.schema.json",
+    "$id": "https://acme.com/ownership.schema.json",
     "title": "Ownership",
     "description": "A Kirby entity ownership",
     "type": "object",
