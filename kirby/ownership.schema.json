@@ -60,6 +60,7 @@
     "$defs": {
         "concierge-domain-and-subdomain": {
             "title": "Concierge domain",
+            "type": "object",
             "properties": {
                 "domain": {
                     "const": "concierge"
@@ -80,6 +81,7 @@
         },
         "customers-domain-and-subdomain": {
             "title": "Customers domain",
+            "type": "object",
             "properties": {
                 "domain": {
                     "const": "customers"
@@ -100,6 +102,7 @@
         },
         "ecommerce-domain-and-subdomain": {
             "title": "eCommerce domain",
+            "type": "object",
             "properties": {
                 "domain": {
                     "const": "ecommerce"
@@ -120,6 +123,7 @@
         },
         "employees-domain-and-subdomain": {
             "title": "Employees domain",
+            "type": "object",
             "properties": {
                 "domain": {
                     "const": "employees"
@@ -140,6 +144,7 @@
         },
         "products-domain-and-subdomain": {
             "title": "Products domain",
+            "type": "object",
             "properties": {
                 "domain": {
                     "const": "products"
@@ -160,6 +165,7 @@
         },
         "sales-domain-and-subdomain": {
             "title": "Sales domain",
+            "type": "object",
             "properties": {
                 "domain": {
                     "const": "sales"
@@ -180,6 +186,7 @@
         },
         "salesevents-domain-and-subdomain": {
             "title": "Sales Events domain",
+            "type": "object",
             "properties": {
                 "domain": {
                     "const": "salesevents"
@@ -200,6 +207,7 @@
         },
         "shared-domain-and-subdomain": {
             "title": "Shared domain",
+            "type": "object",
             "properties": {
                 "domain": {
                     "const": "shared"
@@ -220,6 +228,7 @@
         },
         "supplychain-domain-and-subdomain": {
             "title": "Supply Chain domain",
+            "type": "object",
             "properties": {
                 "domain": {
                     "const": "supplychain"

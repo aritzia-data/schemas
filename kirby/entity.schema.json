@@ -7,8 +7,8 @@
     "properties": {
         "name": {
             "type": "string",
-            "description": "The name of the entity",
-            "pattern": "^[a-z]+_(qa|prd)\\.[a-z_]+$"
+            "description": "The name of the entity (<dataset>_[qa|prd].<table>)",
+            "pattern": "^[a-z0-9]+_(qa|prd)\\.[a-z0-9_]+$"
         },
         "description": {
             "type": "string",

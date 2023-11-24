@@ -45,7 +45,7 @@
                     }
                 }
             },
-            "addditionalProperties": false
+            "additionalProperties": false
         },
         "column": {
             "title": "Schema column",
