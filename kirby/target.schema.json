@@ -27,6 +27,14 @@
                 "type": {
                     "const": "bigquery"
                 },
+                "dataset": {
+                    "type": "string",
+                    "description": "The BigQuery dataset name"
+                },
+                "table": {
+                    "type": "string",
+                    "description": "The BigQuery table name"
+                },
                 "isPartitioned": {
                     "type": "boolean",
                     "description": "If the BigQuery table is partitioned",
@@ -66,7 +74,8 @@
                         "pattern": "^[a-zA-Z0-9_]+\\.[a-zA-Z0-9_]+$"
                     }
                 }
-            }
+            },
+            "additionalProperties": false
         }
     }
 }

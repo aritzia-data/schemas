@@ -9,8 +9,6 @@
             "$ref": "#/$defs/mask"
         },
         "columns": {
-            "title": "Schema top-level columns",
-            "description": "The top-level columns of the schema",
             "type": "object",
             "additionalProperties": {
                 "$ref": "#/$defs/column"
@@ -48,57 +46,111 @@
             "additionalProperties": false
         },
         "column": {
-            "title": "Schema column",
-            "description": "A column in a schema",
             "type": "object",
             "properties": {
                 "description": {
-                    "type": "string",
-                    "description": "Description of the column"
-                },
-                "type": {
-                    "type": "string",
-                    "description": "Type of the column",
-                    "enum": [
-                        "string",
-                        "integer",
-                        "number",
-                        "boolean",
-                        "null",
-                        "array",
-                        "object"
-                    ],
-                    "default": "string"
-                },
-                "maskType": {
-                    "type": "string",
-                    "description": "Mask type of the column",
-                    "enum": [
-                        "encrypt",
-                        "encryptAndHash",
-                        "encryptAndToken"
-                    ]
+                    "type": "string"
                 }
             },
-            "additionalProperties": {
-                "oneOf": [
-                    {
-                        "$comment": "Columns can contain columns recursively",
-                        "$ref": "#/$defs/column"
+            "oneOf": [
+                {
+                    "$comment": "Column with no type (i.e. only 'description')",
+                    "title": "Column of no type",
+                    "required": [
+                        "description"
+                    ]
+                },
+                {
+                    "title": "Column of an array of types",
+                    "properties": {
+                        "type": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "boolean",
+                                    "integer",
+                                    "number",
+                                    "string"
+                                ]
+                            }
+                        }
                     },
-                    {
-                        "$comment": "Columns can contain arrays of columns",
-                        "$ref": "#/$defs/columnArray"
-                    }
-                ]
-            }
-        },
-        "columnArray": {
-            "title": "Schema array of columns",
-            "type": "array",
-            "items": {
-                "$ref": "#/$defs/column"
-            }
+                    "required": [
+                        "type"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "title": "Column of type 'null', 'boolean', 'integer', 'number' or 'string'",
+                    "properties": {
+                        "type": {
+                            "anyOf": [
+                                {
+                                    "const": null
+                                },
+                                {
+                                    "const": "boolean"
+                                },
+                                {
+                                    "const": "integer"
+                                },
+                                {
+                                    "const": "number"
+                                },
+                                {
+                                    "const": "string"
+                                }
+                            ]
+                        }
+                    },
+                    "required": [
+                        "type"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "title": "Column of type 'object'",
+                    "properties": {
+                        "type": {
+                            "const": "object"
+                        },
+                        "columns": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "$ref": "#/$defs/column"
+                            }
+                        }
+                    },
+                    "required": [
+                        "type",
+                        "columns"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "title": "Column of type 'array'",
+                    "properties": {
+                        "type": {
+                            "const": "array"
+                        },
+                        "columns": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "additionalProperties": {
+                                    "$ref": "#/$defs/column"
+                                }
+                            }
+                        }
+                    },
+                    "required": [
+                        "type",
+                        "columns"
+                    ],
+                    "additionalProperties": false
+                }
+            ]
         }
     }
 }
